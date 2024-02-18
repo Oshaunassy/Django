@@ -9,7 +9,7 @@ def test_view(request):
 
 def main_view(reguest):
     if reguest.method == 'GET':
-        return render(reguest, 'main.html')
+        return render(reguest, 'index.html')
     # elif reguest.method == 'POST':
 
 def current_date(request):
