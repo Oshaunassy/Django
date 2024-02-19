@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from post.models import Product
 
 # Create your views here.
 
@@ -18,3 +19,12 @@ def current_date(request):
 
 def goodbye(request):
     return HttpResponse("Goodbye user!")
+
+def product_list_view(request):
+    if request.method == 'GET':
+        products = Product.objects.all()
+        return render(
+            request=request,
+            template_name='product/product_list.html',
+            context={'products' : products}
+            )
