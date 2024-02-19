@@ -1,0 +1,16 @@
+{% include 'components/navbar.html' %}
+
+<div class="content">
+    {% block content %}
+        {% for category in categories %}
+            <div class="category">
+                <h1>{{ category.name }}</h1>
+            </div>
+        {% endfor %}
+    {% endblock %}
+</div>
+
+<!-- ваши скрипты JavaScript -->
+
+</body>
+</html>
